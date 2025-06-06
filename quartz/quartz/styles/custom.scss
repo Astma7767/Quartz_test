@@ -4,11 +4,11 @@
 /* Infobox callout inspired by ITS Theme */
 .callout[data-callout="infobox"] {
   float: right;
-  max-width: 300px;
+  max-width: 400px;
   margin: 0 0 1em 1em;
   padding: 0;
   background-color: var(--background-primary, #f9f9f9);
-  border: 1px solid var(--table, #ccc);
+  border: 2px solid var(--table, #ff0000ce);
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
   font-size: 0.9em;
@@ -18,13 +18,15 @@
   display: none;
 }
 
+// Robienie ramek ale jak po !infobox|wikipedia to tego poniżej nie widać
+
 .callout[data-callout="infobox"][data-callout-metadata~="show-title"] > .callout-title {
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 0.5em;
   font-weight: bold;
-  background-color: var(--background-secondary, #eee);
+  background-color: var(--background-secondary, #14e614);
   border-bottom: 1px solid var(--table, #ccc);
 }
 
@@ -47,4 +49,13 @@
   max-width: 100%;
   margin: 0 auto 0.5em;
   border-radius: 4px;
+}
+
+.callout[data-callout="infobox"] h1 {
+  color: #0057b7; /* np. niebieski jak Wikipedia */
+  text-align: center;
+}
+
+.callout[data-callout="infobox"] .header-anchor {
+  display: none;
 }
