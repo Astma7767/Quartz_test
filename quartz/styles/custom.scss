@@ -1,3 +1,110 @@
 @use "./base.scss";
 
 // put your custom CSS here!
+/* Infobox callout inspired by ITS Theme */
+
+.sidebar, .lightMode {
+    background-color: #eedec4;
+}
+ 
+.page, .center {
+    background-color: #f8eedd;
+    font-size: 20px;
+  }
+
+.callout[data-callout="infobox"] {
+  float: right;
+  max-width: 300px;
+  margin: 0 0 1em 1em;
+  padding: 0;
+  background-color: var(--background-primary, #faf4eb);
+  border: 2px solid var(--table, #002a17);
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  font-size: 0.9em;
+}
+
+.callout[data-callout="infobox"] > .callout-title {
+  display: none;
+}
+
+// Robienie ramek ale jak po !infobox|wikipedia to tego poniżej nie widać
+
+.callout[data-callout="infobox"][data-callout-metadata~="show-title"] > .callout-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5em;
+  font-weight: bold;
+  background-color: var(--background-secondary, #14e614);
+  border-bottom: 1px solid var(--table, #ccc);
+}
+
+.callout[data-callout="infobox"] .callout-content {
+  padding: 0.5em;
+}
+
+.callout[data-callout="infobox"] table {
+  width: 85%;
+  border-collapse: collapse;
+}
+
+.callout[data-callout="infobox"] table td {
+  padding: 4px 6px;
+  vertical-align: middle;
+}
+
+.callout[data-callout="infobox"] img {
+  display: block;
+  max-width: 100%;
+  margin: 0 auto 0.5em;
+  border-radius: 4px;
+}
+
+.callout[data-callout="infobox"] h1 {
+  color: --h1-color; /* np. niebieski jak Wikipedia */
+  text-align: center;
+  
+}
+
+.callout[data-callout="infobox"] h1 .header-anchor,
+.callout[data-callout="infobox"] h2 .header-anchor,
+.callout[data-callout="infobox"] h3 .header-anchor,
+.callout[data-callout="infobox"] h4 .header-anchor,
+.callout[data-callout="infobox"] h5 .header-anchor,
+.callout[data-callout="infobox"] h6 .header-anchor,
+.callout[data-callout="infobox"] h1 > a,
+.callout[data-callout="infobox"] h2 > a,
+.callout[data-callout="infobox"] h3 > a,
+.callout[data-callout="infobox"] h4 > a,
+.callout[data-callout="infobox"] h5 > a,
+.callout[data-callout="infobox"] h6 > a {
+  display: none !important;
+}
+
+.callout[data-callout="infobox"] h2::after {
+  width: 100% !important;
+}
+
+
+/* Styl podkreślenia dla nagłówków */
+h1::after,
+h2::after,
+h3::after {
+  content: "";
+  display: block;
+  height: 2px;
+  background-color:  #002a17; /* lub inny kolor */
+  margin-top: 1px;
+  border-radius: 2px;
+}
+
+h1::after {
+  width: 100%;
+}
+h2::after {
+  width: 60%;
+}
+h3::after {
+  width: 40%;
+}

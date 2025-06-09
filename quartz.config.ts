@@ -8,7 +8,7 @@ import * as Plugin from "./quartz/plugins"
  */
 const config: QuartzConfig = {
   configuration: {
-    pageTitle: "Quartz 4",
+    pageTitle: "Daggerheart by Astma",
     pageTitleSuffix: "",
     enableSPA: true,
     enablePopovers: true,
@@ -23,21 +23,21 @@ const config: QuartzConfig = {
       fontOrigin: "googleFonts",
       cdnCaching: true,
       typography: {
-        header: "Schibsted Grotesk",
-        body: "Source Sans Pro",
-        code: "IBM Plex Mono",
+        header: "Cinzel Decorative",  //"Schibsted Grotesk"
+        body: "EB Garamond",      //"Source Sans Pro"
+        code: "IBM Plex Mono",        //"IBM Plex Mono"
       },
       colors: {
         lightMode: {
-          light: "#faf8f8",
-          lightgray: "#e5e5e5",
-          gray: "#b8b8b8",
-          darkgray: "#4e4e4e",
-          dark: "#2b2b2b",
-          secondary: "#284b63",
-          tertiary: "#84a59d",
-          highlight: "rgba(143, 159, 169, 0.15)",
-          textHighlight: "#fff23688",
+          light: "#eedec4",         //page background "#faf8f8"
+          lightgray: "#ffffff",     //borders "#e5e5e5"
+          gray: "#b8b8b8",          //graph links, heavier borders
+          darkgray: "#3b3b3b",      //body text #4e4e4e
+          dark: "#0f4b29",          //header text and icons "#2b2b2b"
+          secondary: "#284b63",     //link colour, current graph node
+          tertiary: "#84a59d",      //hover states and visited graph nodes
+          highlight: "rgba(143, 159, 169, 0.15)", //internal link background, highlighted text, highlighted lines of code
+          textHighlight: "#fff23688",               //markdown highlighted text background
         },
         darkMode: {
           light: "#161618",
@@ -67,6 +67,7 @@ const config: QuartzConfig = {
         keepBackground: false,
       }),
       Plugin.ObsidianFlavoredMarkdown({ enableInHtmlEmbed: false }),
+      Plugin.OxHugoFlavouredMarkdown(),
       Plugin.GitHubFlavoredMarkdown(),
       Plugin.TableOfContents(),
       Plugin.CrawlLinks({ markdownLinkResolution: "shortest" }),
@@ -89,7 +90,7 @@ const config: QuartzConfig = {
       Plugin.Favicon(),
       Plugin.NotFoundPage(),
       // Comment out CustomOgImages to speed up build time
-      Plugin.CustomOgImages(),
+      // Plugin.CustomOgImages(),
     ],
   },
 }
