@@ -86,7 +86,6 @@
   width: 100% !important;
 }
 
-
 /* Styl podkreślenia dla nagłówków */
 h1::after,
 h2::after,
@@ -107,4 +106,49 @@ h2::after {
 }
 h3::after {
   width: 40%;
+}
+
+// .banner-img {
+//   width: 100%;
+//   max-height: 300px;
+//   object-fit: cover;
+//   display: block;
+//   margin-bottom: 1em;
+//   position: relative;
+//   z-index: 1;
+// }
+
+// .banner-img::after {
+//   content: "";
+//   display: block;
+//   position: absolute;
+//   left: 0;
+//   bottom: 0;
+//   width: 100%;
+//   height: 60px; /* wysokość przenikania */
+//   pointer-events: none;
+//   background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, #f8eedd 100%);
+//   /* Zmień #f8eedd na kolor tła strony */
+// }
+
+.banner-img-wrapper {
+  position: relative;
+  width: 100%;
+  max-height: 200px;
+  overflow: hidden;
+  margin-bottom: 1em;
+}
+.banner-img {
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  display: block;
+}
+.banner-img-wrapper::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  height: 80px;
+  background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, #f8eedd 100%);
+  pointer-events: none;
 }

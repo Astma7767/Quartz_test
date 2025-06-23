@@ -3,7 +3,13 @@ title: "Tharnheim"
 draft: false
 tags:
   - Country
+banner: /assets/banner1.jpg
 ---
+
+<div class="banner-img-wrapper">
+  <img src="/assets/banner1.jpg" class="banner-img" />
+</div>
+
 > [!infobox|wikipedia|show-title]
 > ## Państwo Tharnheim
 > ![[assets/Tharnheim_flag.jpg]]
